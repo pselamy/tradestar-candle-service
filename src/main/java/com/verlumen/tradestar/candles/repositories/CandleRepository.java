@@ -1,4 +1,4 @@
-package com.verlumen.tradestar.candles;
+package com.verlumen.tradestar.candles.repositories;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Range;
@@ -8,7 +8,7 @@ import com.verlumen.tradestar.protos.instruments.Instrument;
 
 import java.time.Instant;
 
-public interface CandleService {
+public interface CandleRepository {
     ImmutableSet<Candle> getCandles(Instrument instrument,
                                     Granularity granularity,
                                     Range<Instant> timeRange);
