@@ -21,6 +21,13 @@ git_repository(
 )
 
 git_repository(
+    name = "tradestar_repos",
+    commit = "296b67fdfd878e787f68973c0035418621084884",
+    remote = "https://github.com/pselamy/tradestar-repos",
+    shallow_since = "1645497038 -0600",
+)
+
+git_repository(
     name = "contrib_rules_jvm",
     commit = "f7c08ec6d73ef691b03f843e0c2c3dbe766df584",
     remote = "https://github.com/bazel-contrib/rules_jvm",
@@ -50,6 +57,7 @@ maven_install(
         "org.springframework.boot:spring-boot-autoconfigure:2.1.3.RELEASE",
         "org.springframework.boot:spring-boot-starter-web:2.1.3.RELEASE",
         "org.springframework.boot:spring-boot:2.1.3.RELEASE",
+        "org.springframework:spring-beans:5.3.18",
         "org.springframework:spring-context:5.1.5.RELEASE",
         "org.springframework:spring-web:5.1.5.RELEASE",
     ],
