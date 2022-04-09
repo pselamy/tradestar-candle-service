@@ -14,6 +14,13 @@ load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 protobuf_deps()
 
 git_repository(
+    name = "tradestar_protos",
+    commit = "835a65045f1fc3353ec4c8035cd8aab8d8c36067",
+    remote = "https://github.com/pselamy/tradestar-protos",
+    shallow_since = "1645497038 -0600",
+)
+
+git_repository(
     name = "contrib_rules_jvm",
     commit = "f7c08ec6d73ef691b03f843e0c2c3dbe766df584",
     remote = "https://github.com/bazel-contrib/rules_jvm",
