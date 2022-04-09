@@ -1,3 +1,8 @@
 package com.verlumen.tradestar.candles;
 
-public interface CandleService {}
+import com.google.common.collect.ImmutableSet;
+import com.verlumen.tradestar.protos.candles.Candle;
+
+public interface CandleService {
+    ImmutableSet<Candle> getCandles();
+}
