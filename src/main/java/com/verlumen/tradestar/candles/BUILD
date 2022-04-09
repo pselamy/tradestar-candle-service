@@ -18,6 +18,7 @@ java_binary(
     main_class = "com.verlumen.tradestar.candles.CandleService",
     runtime_deps = [
         ":candle_controller",
+        ":guice_configuration",
     ],
     deps = [
         "@maven//:org_springframework_boot_spring_boot",
@@ -25,5 +26,16 @@ java_binary(
         "@maven//:org_springframework_boot_spring_boot_starter_web",
         "@maven//:org_springframework_spring_context",
         "@maven//:org_springframework_spring_web",
+    ],
+)
+
+java_library(
+    name = "guice_configuration",
+    srcs = ["GuiceConfiguration.java"],
+    deps = [
+        "@maven//:com_google_inject_guice",
+        "@maven//:org_springframework_guice_spring_guice",
+        "@maven//:org_springframework_spring_beans",
+        "@maven//:org_springframework_spring_context",
     ],
 )
