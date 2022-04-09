@@ -19,6 +19,7 @@ java_library(
     name = "candle_controller",
     srcs = ["CandleController.java"],
     deps = [
+        "@maven//:com_google_guava_guava",
         "@maven//:org_springframework_spring_beans",
         "@maven//:org_springframework_spring_web",
         "@tradestar_protos//:candles_java_proto",
