@@ -58,6 +58,7 @@ maven_install(
         "org.springframework.boot:spring-boot-autoconfigure:2.1.3.RELEASE",
         "org.springframework.boot:spring-boot-starter-web:2.1.3.RELEASE",
         "org.springframework.boot:spring-boot:2.1.3.RELEASE",
+        "org.springframework.guice:spring-guice:2.0.0",
         "org.springframework:spring-beans:5.3.18",
         "org.springframework:spring-context:5.1.5.RELEASE",
         "org.springframework:spring-web:5.1.5.RELEASE",
