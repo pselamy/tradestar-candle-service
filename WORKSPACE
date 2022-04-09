@@ -3,6 +3,17 @@ workspace(name = "tradestar_candle_service")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 git_repository(
+    name = "com_google_protobuf",
+    commit = "498de9f761bef56a032815ee44b6e6dbe0892cc4",
+    remote = "https://github.com/protocolbuffers/protobuf",
+    shallow_since = "1580681072 -0800",
+)
+
+load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
+
+protobuf_deps()
+
+git_repository(
     name = "contrib_rules_jvm",
     commit = "f7c08ec6d73ef691b03f843e0c2c3dbe766df584",
     remote = "https://github.com/bazel-contrib/rules_jvm",
