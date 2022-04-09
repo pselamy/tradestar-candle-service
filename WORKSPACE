@@ -29,6 +29,10 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 maven_install(
     artifacts = [
         "com.google.guava:guava:31.0.1-jre",
+        "org.springframework.boot:spring-boot-autoconfigure:2.1.3.RELEASE",
+        "org.springframework.boot:spring-boot-starter-web:2.1.3.RELEASE",
+        "org.springframework.boot:spring-boot:2.1.3.RELEASE",
+        "org.springframework:spring-web:5.1.5.RELEASE",
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
