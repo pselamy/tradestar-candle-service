@@ -3,8 +3,7 @@ java_binary(
     srcs = ["CandleService.java"],
     main_class = "com.verlumen.tradestar.candles.CandleService",
     runtime_deps = [
-        "@tradestar_protos//:candles_java_proto",
-        "@tradestar_protos//:instruments_java_proto",
+        ":candle_controller",
     ],
     deps = [
         "@maven//:org_springframework_boot_spring_boot",
