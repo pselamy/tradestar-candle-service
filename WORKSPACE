@@ -3,15 +3,17 @@ workspace(name = "tradestar_candle_service")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 git_repository(
-    name = "com_google_protobuf",
-    commit = "498de9f761bef56a032815ee44b6e6dbe0892cc4",
-    remote = "https://github.com/protocolbuffers/protobuf",
-    shallow_since = "1580681072 -0800",
+    name = "rules_proto",
+    commit = "3212323502e21b819ac4fbdd455cb227ad0f6394",
+    remote = "https://github.com/bazelbuild/rules_proto",
+    shallow_since = "1649153521 +0200",
 )
 
-load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
+load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
 
-protobuf_deps()
+rules_proto_dependencies()
+
+rules_proto_toolchains()
 
 git_repository(
     name = "tradestar_protos",
@@ -43,16 +45,6 @@ load("@contrib_rules_jvm//:setup.bzl", "contrib_rules_jvm_setup")
 contrib_rules_jvm_setup()
 
 git_repository(
-    name = "rules_proto",
-    remote = "https://github.com/bazelbuild/rules_proto",
-    tag = "rules_proto 4.0.0-3.20.0",
-)
-
-load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
-rules_proto_dependencies()
-rules_proto_toolchains()
-
-git_repository(
     name = "rules_proto_grpc",
     remote = "https://github.com/rules-proto-grpc/rules_proto_grpc",
     tag = "4.1.1",
@@ -74,7 +66,6 @@ load("@rules_proto_grpc//java:repositories.bzl", rules_proto_grpc_java_repos = "
 
 rules_proto_grpc_java_repos()
 
-load("@rules_jvm_external//:defs.bzl", "maven_install")
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS", "grpc_java_repositories")
 
 grpc_java_repositories()
@@ -89,7 +80,6 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
     artifacts = [
-        "com.google.guava:guava:31.0.1-jre",
         "com.google.inject:guice:5.1.0",
         "org.springframework.boot:spring-boot-autoconfigure:2.1.3.RELEASE",
         "org.springframework.boot:spring-boot-starter-web:2.1.3.RELEASE",
