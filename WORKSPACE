@@ -82,6 +82,7 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 maven_install(
     artifacts = [
         "com.google.inject:guice:5.1.0",
+        "io.grpc:grpc-api:1.45.1",
         "org.springframework.boot:spring-boot-autoconfigure:2.1.3.RELEASE",
         "org.springframework.boot:spring-boot-starter-web:2.1.3.RELEASE",
         "org.springframework.boot:spring-boot:2.1.3.RELEASE",
