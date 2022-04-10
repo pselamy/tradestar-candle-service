@@ -7,8 +7,6 @@ java_library(
         "@maven//:com_google_guava_guava",
         "@maven//:org_springframework_spring_beans",
         "@maven//:org_springframework_spring_web",
-        "@tradestar_protos//:candles_java_proto",
-        "@tradestar_protos//:instruments_java_proto",
         "@tradestar_repos//src/main/java/com/verlumen/tradestar/repositories/candles:candle_repository",
         "@tradestar_repos//src/main/java/com/verlumen/tradestar/repositories/instruments:instrument_repository",
     ],
