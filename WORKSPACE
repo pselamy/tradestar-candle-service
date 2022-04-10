@@ -43,6 +43,27 @@ load("@contrib_rules_jvm//:setup.bzl", "contrib_rules_jvm_setup")
 contrib_rules_jvm_setup()
 
 git_repository(
+    name = "rules_proto_grpc",
+    remote = "https://github.com/rules-proto-grpc/rules_proto_grpc",
+    tag = "4.1.1",
+)
+
+load("@rules_proto_grpc//java:repositories.bzl", rules_proto_grpc_java_repos = "java_repos")
+
+load("@rules_proto_grpc//java:repositories.bzl", rules_proto_grpc_java_repos = "java_repos")
+
+rules_proto_grpc_java_repos()
+
+load("@rules_jvm_external//:defs.bzl", "maven_install")
+load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS", "grpc_java_repositories")
+
+load("@maven//:compat.bzl", "compat_repositories")
+
+compat_repositories()
+
+grpc_java_repositories()
+
+git_repository(
     name = "rules_jvm_external",
     remote = "https://github.com/bazelbuild/rules_jvm_external",
     tag = "4.2",
@@ -61,7 +82,9 @@ maven_install(
         "org.springframework:spring-beans:5.3.18",
         "org.springframework:spring-context:5.1.5.RELEASE",
         "org.springframework:spring-web:5.1.5.RELEASE",
-    ],
+    ] + IO_GRPC_GRPC_JAVA_ARTIFACTS,
+    generate_compat_repositories = True,
+    override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
     repositories = [
         "https://repo1.maven.org/maven2",
     ],
