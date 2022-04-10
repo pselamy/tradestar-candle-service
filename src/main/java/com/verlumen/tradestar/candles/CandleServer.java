@@ -10,6 +10,7 @@ import com.google.inject.Inject;
 import com.google.inject.multibindings.Multibinder;
 import com.verlumen.tradestar.protos.candles.*;
 import com.verlumen.tradestar.repositories.candles.CandleRepository;
+import com.verlumen.tradestar.repositories.candles.CandleRepositoryModule;
 import io.grpc.BindableService;
 import io.grpc.stub.StreamObserver;
 
@@ -23,13 +24,12 @@ public class CandleServer {
      * Main launches the server from the command line.
      */
     public static void main(String[] args) throws InterruptedException {
-        Guice.createInjector(
-                        new CandleServerModule(), new GrpcServerRunnerModule())
+        Guice.createInjector(new CandleServerModule())
                 .getInstance(GrpcServerRunner.class)
                 .run();
     }
 
-    static class CandleServiceImpl extends CandleServiceGrpc.CandleServiceImplBase {
+    private static class CandleServiceImpl extends CandleServiceGrpc.CandleServiceImplBase {
         private final CandleRepository candleRepository;
 
         @Inject
@@ -61,12 +61,15 @@ public class CandleServer {
         }
     }
 
-    static class CandleServerModule extends AbstractModule {
+    private static class CandleServerModule extends AbstractModule {
         @Override
         protected void configure() {
             Multibinder<BindableService> serviceBinder =
                     Multibinder.newSetBinder(binder(), BindableService.class);
             serviceBinder.addBinding().to(CandleServiceImpl.class);
+
+            install(new CandleRepositoryModule());
+            install(new GrpcServerRunnerModule());
         }
     }
 }
