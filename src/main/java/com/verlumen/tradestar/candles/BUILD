@@ -47,3 +47,16 @@ java_library(
         "@maven//:org_springframework_spring_context",
     ],
 )
+
+java_library(
+    name = "candle_server",
+    srcs = ["CandleServer.java"],
+    deps = [
+        ":candle_service_grpc",
+        "@grpc_server_runner//src/main/java/com/github/pselamy/grpc:grpc_server_runner",
+        "@grpc_server_runner//src/main/java/com/github/pselamy/grpc:grpc_server_runner_module",
+        "@tradestar_protos//:candles_java_proto",
+        "@tradestar_protos//:instruments_java_proto",
+        "@tradestar_repos//src/main/java/com/verlumen/tradestar/repositories/candles:candle_repository",
+    ],
+)
