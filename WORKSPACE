@@ -43,6 +43,12 @@ load("@contrib_rules_jvm//:setup.bzl", "contrib_rules_jvm_setup")
 contrib_rules_jvm_setup()
 
 git_repository(
+    name = "rules_proto",
+    remote = "https://github.com/bazelbuild/rules_proto",
+    tag = "rules_proto 4.0.0-3.20.0",
+)
+
+git_repository(
     name = "rules_proto_grpc",
     remote = "https://github.com/rules-proto-grpc/rules_proto_grpc",
     tag = "4.1.1",
