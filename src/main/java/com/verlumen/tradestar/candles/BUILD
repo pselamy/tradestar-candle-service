@@ -1,3 +1,5 @@
+load("@rules_proto_grpc//java:defs.bzl", "java_grpc_library")
+
 java_library(
     name = "candle_controller",
     srcs = ["CandleController.java"],
@@ -27,6 +29,11 @@ java_binary(
         "@maven//:org_springframework_spring_context",
         "@maven//:org_springframework_spring_web",
     ],
+)
+
+java_grpc_library(
+    name = "candle_service_grpc",
+    protos = ["@tradestar_protos//:candle_service"],
 )
 
 java_library(
