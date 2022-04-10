@@ -48,6 +48,10 @@ git_repository(
     tag = "rules_proto 4.0.0-3.20.0",
 )
 
+load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
+rules_proto_dependencies()
+rules_proto_toolchains()
+
 git_repository(
     name = "rules_proto_grpc",
     remote = "https://github.com/rules-proto-grpc/rules_proto_grpc",
