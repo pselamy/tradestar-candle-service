@@ -31,6 +31,10 @@ java_binary(
 java_grpc_library(
     name = "candle_service_grpc",
     protos = ["@tradestar_protos//:candle_service_proto"],
+    deps = [
+        "@tradestar_protos//:candles_java_proto",
+        "@tradestar_protos//:instruments_java_proto",
+    ],
 )
 
 java_library(
