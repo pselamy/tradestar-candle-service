@@ -15,7 +15,7 @@ protobuf_deps()
 
 git_repository(
     name = "tradestar_protos",
-    commit = "fda70e8dbfdd92779ec4abf3db37ae8646e193f4",
+    commit = "c84f83610145251e98a81e3dd1b8a6baffcda649",
     remote = "https://github.com/pselamy/tradestar-protos",
     shallow_since = "1645497038 -0600",
 )
