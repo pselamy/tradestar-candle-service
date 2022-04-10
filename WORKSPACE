@@ -3,6 +3,13 @@ workspace(name = "tradestar_candle_service")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 git_repository(
+    name = "grpc_server_runner",
+    commit = "d76ce74124b4059eaaf5dd64ae3fed080096c16d",
+    remote = "https://github.com/pselamy/grpc-server-runner",
+    shallow_since = "1645497038 -0600",
+)
+
+git_repository(
     name = "rules_proto",
     commit = "3212323502e21b819ac4fbdd455cb227ad0f6394",
     remote = "https://github.com/bazelbuild/rules_proto",
