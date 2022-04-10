@@ -31,7 +31,7 @@ git_repository(
 
 git_repository(
     name = "tradestar_repos",
-    commit = "c35b91afb3c859fd65189301e99a58edb61cfff6",
+    commit = "a3c6badaafb84bf54eb71b43d96152b0e63ddf8c",
     remote = "https://github.com/pselamy/tradestar-repos",
     shallow_since = "1645497038 -0600",
 )
