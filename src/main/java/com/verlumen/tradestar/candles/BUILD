@@ -48,9 +48,10 @@ java_library(
     ],
 )
 
-java_library(
+java_binary(
     name = "candle_server",
     srcs = ["CandleServer.java"],
+    main_class = "com.verlumen.tradestar.candles.CandleServer",
     deps = [
         ":candle_service_grpc",
         "@grpc_server_runner//src/main/java/com/github/pselamy/grpc:grpc_server_runner",
