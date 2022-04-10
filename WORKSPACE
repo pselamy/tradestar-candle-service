@@ -48,7 +48,6 @@ git_repository(
     tag = "4.2",
 )
 
-load("@rules_jvm_external//:specs.bzl", "maven")
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
