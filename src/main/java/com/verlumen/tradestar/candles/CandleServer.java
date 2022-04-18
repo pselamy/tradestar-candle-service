@@ -24,9 +24,7 @@ public class CandleServer {
      * Main launches the server from the command line.
      */
     public static void main(String[] args) throws InterruptedException {
-        Guice.createInjector(new CandleServerModule())
-                .getInstance(GrpcServerRunner.class)
-                .run();
+        GrpcServerRunner.run(new CandleServerModule());
     }
 
     private static class CandleServiceImpl extends CandleServiceGrpc.CandleServiceImplBase {
@@ -69,7 +67,6 @@ public class CandleServer {
             serviceBinder.addBinding().to(CandleServiceImpl.class);
 
             install(new CandleRepositoryModule());
-            install(new GrpcServerRunnerModule());
         }
     }
 }

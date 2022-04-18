@@ -4,7 +4,7 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 git_repository(
     name = "grpc_server_runner",
-    commit = "bf078b385a4b0b469a97bb73d2d8c9c59c964480",
+    commit = "94c56df2c7934ae8e01a9e717fbbd16eb44d0f75",
     remote = "https://github.com/pselamy/grpc-server-runner",
     shallow_since = "1645497038 -0600",
 )
