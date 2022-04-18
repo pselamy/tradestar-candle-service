@@ -1,7 +1,6 @@
 package com.verlumen.tradestar.candles;
 
 import com.github.pselamy.grpc.GrpcServerRunner;
-import com.github.pselamy.grpc.GrpcServerRunnerModule;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Range;
 import com.google.inject.AbstractModule;
