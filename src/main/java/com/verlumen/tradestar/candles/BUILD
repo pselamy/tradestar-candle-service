@@ -16,7 +16,6 @@ java_binary(
     deps = [
         ":candle_service_grpc",
         "@grpc_server_runner//src/main/java/com/github/pselamy/grpc:grpc_server_runner",
-        "@grpc_server_runner//src/main/java/com/github/pselamy/grpc:grpc_server_runner_module",
         "@maven//:com_google_inject_guice",
         "@tradestar_protos//:candles_java_proto",
         "@tradestar_protos//:instruments_java_proto",
