@@ -57,6 +57,8 @@ public class CandleServer {
             responseObserver.onCompleted();
         }
     }
+    
+    private enum GetCandlesConstraint {}
 
     private static class CandleServerModule extends AbstractModule {
         @Override
